@@ -1,0 +1,44 @@
+.tato{
+    margin: 0 auto;
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card{
+    width: 300px;
+    height: 350px;
+    border: 1px solid silver;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card p{
+    padding: 0 20px 0 20px;
+}
+.icon{
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: absolute;
+    background: white;
+    top: -40px;
+}
+.btn{
+    width: 100px;
+    height: 50px;
+    background: cyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
