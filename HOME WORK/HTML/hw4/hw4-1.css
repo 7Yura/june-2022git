@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+.wrap {
+    width: 100%;
+    height: 600px;
+    border: 2px solid black;
+}
+.a {
+    width: 100%;
+    height: 200px;
+    background: silver;
+}
+.father {
+    width: 100%;
+    height: 400px;
+    background: cyan;
+    display: flex;
+    flex-direction: row;
+}
+
+.b {
+    width: 66%;
+    height: 400px;
+    background: blueviolet;
+}
+.c {
+    width: 34%;
+    height: 400px;
+    background: brown;
+}
+
+@media screen and (max-width: 1000px ){
+    .father {
+        flex-direction: column;
+        height: 75%;
+
+    }
+    .b {
+        width: 100%;
+        height: 150%;
+
+
+    }
+    .c {
+        width: 100%;
+
+    }
+    .a {
+        height: 25%;
+    }
+
+}
