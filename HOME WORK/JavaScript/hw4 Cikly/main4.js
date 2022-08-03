@@ -20,7 +20,7 @@
 //
 // for (let i = 0; i < spisok.length; i++) {
 //     const spisokElement = spisok[i];
-//     document.write(`<div>${spisokElement.name}  </div>`);
+//     document.write(`<div>${i' '+spisokElement.name}  </div>`);
 // }
 
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
@@ -55,11 +55,11 @@
 // let i = 0;
 // while   ( i < spisok.length) {
 //     const spisokElement = spisok[i];
-//     document.write(`<div> <h1> ${spisokElement.username} </h1> </div>`);
+//     document.write(`<div> <h1> ${i' '+spisokElement.username} </h1> </div>`);
 //     i++
 // }
 
-// - Використовуючи данні з масиву, за допомоги document.write та циклу
+// - Використовуючи данні з масиву, за допомоги document.write та циклу'
 // побудувати структуру по шаблону
 // Масив:
 //
@@ -80,15 +80,12 @@
 //
 // -----------------------------------------------
 // let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+// document.write(`<ul>`);
 // for (let i = 0; i < listOfItems.length; i++) {
 //     const listOfItem = listOfItems[i];
-//     document.write(`<div>
-//         <ul>
-//             <li>${listOfItem}</li>
-//         </ul>
-//     </div>`);
+//     document.write(`<li>${listOfItem}</li>`);
 // }
-
+// document.write(`</ul>`);
 //     Використовуючи данні з масиву, за допомоги document.write та циклу
 // побудувати структуру по шаблону  Зробити адекватну стилізацію
 // Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
@@ -166,11 +163,14 @@
 //         console.log(user);
 //     }
 // }
+//
+// console.log('------------');
 // for (const user of users) {
 //     if (!user.status){
 //         console.log(user);
 //     }
 // }
+// console.log('------------');
 // for (const user of users) {
 //     if (user.age>30){
 //         console.log(user);
