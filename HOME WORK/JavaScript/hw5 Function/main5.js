@@ -51,8 +51,14 @@
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 // function spis(...spi) {
-//     console.log(spi);
+//     document.write(`<ul>`);
+//     for (let i = 0; i < spi.length; i++) {
+//         const spiElement = spi[i];
+//         document.write(`<li>${spiElement}</li>`);
+//     }
+//     document.write(`</ul>`);
 // }
+//
 // spis(34, 56, 'html', true, 34, 45, 'top');
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
