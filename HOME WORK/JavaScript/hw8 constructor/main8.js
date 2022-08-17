@@ -184,3 +184,4 @@
 // }
 // let find= pop.find(value => value.розмір_ноги===princ1.розмір_ноги)
 //     console.log(find,'принц знайшов свою попелюшку');
+//
