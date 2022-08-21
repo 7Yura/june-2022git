@@ -52,9 +52,11 @@
 // let user8 = new Client(21, 'vana', 'ivanov', 'qwerty@net', 121341234, ['milk','brad','orenge','orenge','adad']);
 // let user9 = new Client(21, 'vana', 'ivanov', 'qwerty@net', 121341234, ['milk','brad','orenge','orenge','aad']);
 // let user10 = new Client(21, 'vana', 'ivanov', 'qwerty@net', 121341234, ['milk','brad','orenge']);
-// let user = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10];
-// console.log(user);
+// let user = [];
 //
+//     user.push(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10);
+// console.log(user);
+
 // // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
 // console.log(user.sort((a, b) => a.order.length - b.order.length));
 
