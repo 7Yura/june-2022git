@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document2</title>
+</head>
+<body>
+<a href='./post-details.html'>Titel</a>
+<script>
+    console.log(JSON.parse(localStorage.getItem('users')));
+    // На странице user-details.html:
+    // 4 Вывести всю, без исключения, информацию про объект user на кнопку/ссылку которого был совершен клик ранее.
+    // 5 Добавить кнопку "post of current user", при клике на которую, появляются title всех постов текущего юзера
+    // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+    // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
+    // которая имеет детальную информацию про текущий пост.
+
+    let users= JSON.parse(localStorage.getItem('users'))
+    for (const user of users) {
+        let div = document.createElement('div');
+        let button = document.createElement('button');
+        button.innerText = 'post of current user'
+        div.innerText = `${user.id}${user.name}`;
+        button.onclick = function () {
+            fetch('http://jsonplaceholder.typicode.com/users/${user.id}/posts')
+                .then((response) => response.json())
+                .then(posts => posts.forEach(post => {
+                    let array = JSON.parse(localStorage.getItem('posts')) || [];
+                    array.push(post.title);
+                    localStorage.setItem('posts', JSON.stringify(array));
+
+                }));
+
+        };
+        div.appendChild(button)
+        document.body.appendChild(div)
+    }
+
+</script>
+
+</body>
+</html>
