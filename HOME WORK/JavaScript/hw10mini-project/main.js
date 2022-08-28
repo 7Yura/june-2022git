@@ -4,32 +4,34 @@
 // 3 Добавить каждому блоку кнопку/ссылку , при клике на которую происходит переход на страницу user-details.html,
 // которая имеет детальную информацию про объект на который кликнули
 fetch('https://jsonplaceholder.typicode.com/users')
-    .then((response) => response.json())
-    .then(users => users.forEach(user => {
+    .then(response => response.json())
+    .then(json => {
+        let big = document.createElement('div');
+        big.classList.add('big');
+        document.body.appendChild(big);
+        json.forEach(users => {
             let div = document.createElement('div');
-            div.innerText = `${user.id} ${user.name}`;
+            div.classList.add('div');
+            big.appendChild(div);
+            let h2 = document.createElement('h2')
+            h2.innerText = `${users.id}. ${users.name}`
+            let a = document.createElement('a')
+            a.innerText = 'Details';
+            a.href = `user-details/user-details.html?id=${users.id}`
+            a.onclick = () => {
+                let arr = [];
+                arr.push(users)
+                localStorage.setItem('user', JSON.stringify(arr))
 
-            let button = document.createElement('button');
-            button.innerText='detailed information'
+            };
+            div.append(h2, a);
 
-        button.onclick = function () {
-            let array = JSON.parse(localStorage.getItem('users')) || [];
-            array.push(user);
-            localStorage.setItem('users', JSON.stringify(array));
-
-        };
-        div.appendChild(button);
-        document.body.appendChild(div);
-    }));
+        })
+    })
 
 
-//
 
 
-// На странице post-details.html:
-// 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
-// 8 Ниже информации про пост, вывести все комментарии текущего поста
-// (эндпоинт для получения информации - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 //
 // Стилизация проекта -
 // index.html - все блоки с user - по 2 в ряд. кнопки/ссылки находяться под информацией про user.
