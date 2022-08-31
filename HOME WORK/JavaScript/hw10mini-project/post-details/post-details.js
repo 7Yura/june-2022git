@@ -38,27 +38,36 @@ button.onclick = () => {
 
 }
 
-function createdDiv(fatherDiv, object) {
+function createdDiv(mainDiv, object) {
     let {userId, postId, id, title, body, email, name} = object
 
     function createdHeading(nameId, words) {
         let h3 = document.createElement('h3')
         h3.innerText = `${words}: ${nameId} | ID: ${id}`;
-        fatherDiv.appendChild(h3)
+        mainDiv.appendChild(h3)
     }
-    (userId) ? createdHeading(userId, 'UserID') : createdHeading(postId, 'PostID')
+
+    if (userId) {
+        createdHeading(userId, 'UserID');
+    } else {
+        createdHeading(postId, 'PostID');
+    }
     function createdParagraph(name, words) {
         let p1 = document.createElement('p')
         p1.innerText = `${words}: ${name}`
-        fatherDiv.appendChild(p1);
+        mainDiv.appendChild(p1);
     }
-    (title) ? createdParagraph(title, 'Title') : createdParagraph(name, 'Name');
+    if (title) {
+        createdParagraph(title, 'Title')
+    } else {
+        createdParagraph(name, 'Name')
+    }
     let p2 = document.createElement('p')
     p2.innerText = `Body: ${body}`
-    fatherDiv.appendChild(p2);
+    mainDiv.appendChild(p2);
     if (email) {
         let p3 = document.createElement('p')
         p3.innerText = `Email: ${email}`
-        fatherDiv.appendChild(p3);
+        mainDiv.appendChild(p3);
     }
 }

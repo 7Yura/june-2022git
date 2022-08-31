@@ -62,7 +62,24 @@
 //   console.log(('jasfdhjafh', sdfsds));
 //
 // })
-
+// async function vacation(isWordkingDAy) {
+//   try {
+//     const payment = await goWork(isWordkingDAy);
+//     console.log(payment, 'payment')
+//
+//     const moneyAfterTrip = await goToCroatia(payment);
+//     console.log(moneyAfterTrip, 'moneyAfterTrip');
+//
+//     const moneyAgterShoping = await buySouvenirs(moneyAfterTrip);
+//     console.log(moneyAgterShoping, 'moneyAgterShoping')
+//   } catch (e) {
+//     console.warn('OOOOOPS!!!', e)
+//   }
+// }
+//
+//
+// vacation(false);
+// vacation(true);
 
 
 function ranok(istime,time) {
@@ -163,38 +180,38 @@ function rest (time) {
   });
 }
 
-// ranok(true,7)
-//     .then(istime => {
+ranok(true,7)
+    .then(istime => {
+
+      return snidanok(istime)
+    })
+    .then(istime => {
+      // console.log('я снідаю', istime,);
+      return work(istime)
+    })
+    .then(istime => {
+      // console.log('йду на роботу', istime);
+      return brekfast(istime)
+    })
+    .then(istime => {
+      return workAfterBrekfast(istime)
+    })
+    .then(istime => {
+      return rest(istime)
+    })
+
+// async function vacation(istime,time) {
+//   try {
+//     const time0 = await ranok(istime,time);
+//     const time1 = await snidanok(time0);
+//     const time2 = await work(time1);
+//     const time3 = await brekfast(time2);
+//     const time4 = await workAfterBrekfast(time3);
+//     const time5 = await rest(time4);
+//   } catch (e) {
+//     console.warn('OOOOOPS!!!', e)
+//   }
+// }
 //
-//       return snidanok(istime)
-//     })
-//     .then(istime => {
-//       // console.log('я снідаю', istime,);
-//       return work(istime)
-//     })
-//     .then(istime => {
-//       // console.log('йду на роботу', istime);
-//       return brekfast(istime)
-//     })
-//     .then(istime => {
-//       return workAfterBrekfast(istime)
-//     })
-//     .then(istime => {
-//       return rest(istime)
-//     })
-
-async function vacation(istime,time) {
-  try {
-    const time0 = await ranok(istime,time);
-    const time1 = await snidanok(time0);
-    const time2 = await work(time1);
-    const time3 = await brekfast(time2);
-    const time4 = await workAfterBrekfast(time3);
-    const time5 = await rest(time4);
-  } catch (e) {
-    console.warn('OOOOOPS!!!', e)
-  }
-}
-
-vacation(true,7);
+// vacation(true,7);
 
